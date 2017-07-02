@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+	PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.cto.auction.repository.item.ItemDAO">
+	<resultMap type="item" id="itemResult"/>
+	<!-- 아이템 리스트 조회 -->
+	<select id="itemList" resultType="item">
+		SELECT * FROM AUCTION_ITEM
+	</select>
+	<!-- 아이템 등록 -->
+	<insert id="itemInsert">
+		INSERT INTO AUCTION_ITEM(AUCTIONEER_ID, 
+			ITEM_NAME,
+			ITEM_CONTENT,
+			END_DATE,
+			CURRENT_BID_AMOUNT,
+			CATEGORY_ID,
+			PARENT_CATEGORY_ID,
+			PICTURE_LOCATION)
+			 VALUES(#{auctioneer_id},
+			 		#{item_name},
+			 		#{item_content},
+			 		SYSDATE+7,
+			 		#{current_bid_amount},
+			 		#{category_id}, 
+			 		#{parent_category_id},
+			 		#{picture_location})
+<!-- insert into auction_item (
+  auctioneer_id
+  , item_name
+  , item_content
+  , end_date
+  , current_bid_amount
+  , category_id
+  , parent_category_id
+  , picture_location)
+  values (
+    1
+    , 'iPhone 7'
+    , '애플의 감성의 끝판왕 아이폰 7이 돌아왔다.'
+    , SYSDATE + 7
+    , 10000
+    , 4
+    , 2
+    , 'image/somthing/in/here');	 -->		 
+	</insert>
+</mapper>

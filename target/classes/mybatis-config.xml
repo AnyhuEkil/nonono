@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+	<typeAliases>
+		<!-- 별명 설정 -->
+		<typeAlias alias="auctionBoard" type="com.cto.auction.vo.auctionBoard.AuctionBoard"/>
+		<typeAlias alias="auctionBid" type="com.cto.auction.vo.auctionBid.AuctionBid"/>
+		<typeAlias alias="auctionUser" type="com.cto.auction.vo.auctionUser.AuctionUser"/>
+		<typeAlias alias="userPayment" type="com.cto.auction.vo.auctionUser.UserPayment"/>
+		<typeAlias alias="auctionItem" type="com.cto.auction.vo.auctionItem.AuctionItem"/>
+	</typeAliases>
+</configuration>
