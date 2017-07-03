@@ -36,7 +36,7 @@
 </head>
 <body>
 	<div>
-		<jsp:include page="myPageNav.jsp" flush="false" />
+		<jsp:include page="auctioneerPageNav.jsp" flush="false" />
 	</div>
 	<br>
 	<br>

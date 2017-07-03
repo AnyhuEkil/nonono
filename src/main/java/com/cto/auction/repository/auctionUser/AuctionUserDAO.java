@@ -33,4 +33,6 @@ public interface AuctionUserDAO {
 
 	public void myPagePayUpdate(UserPayment upt);
 
+	public void myPagePayInsert(UserPayment upt);
+
 }

@@ -40,7 +40,7 @@ public class AuctionItemController {
 	// 아이템 등록실행
 	@RequestMapping("item/insertProc.do")
 	public String insertProc(@ModelAttribute AuctionItem ins, HttpSession session, MultipartFile file) throws IOException{
-		int id = (int) session.getAttribute("id");
+		int id = (Integer) session.getAttribute("id");
 		ins.setAuctioneer_id(id);
 		service.itemInsert(ins, file);
 		return "redirect:/main.do";

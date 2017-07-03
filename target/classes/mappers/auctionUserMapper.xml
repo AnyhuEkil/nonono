@@ -16,8 +16,7 @@
 		INSERT INTO
 		AUCTION_USER
 		(EMAIL, PASSWORD, USER_NAME, REGISTER_DATE) VALUES
-		(#{email},
-		#{password}, #{user_name}, SYSDATE)
+		(#{email}, #{password}, #{user_name}, SYSDATE)
 	</select>
 
 	<select id="myPageUserInfo" resultType="auctionUser">
@@ -64,7 +63,7 @@
 	</update>
 	
 	<select id="myPageUserPayment" resultType="userPayment">
-		SELECT * FROM USER_PAYMENT WHERE USER_ID = ${user_id}
+		SELECT * FROM USER_PAYMENT WHERE USER_ID = #{user_id}
 	</select>
 	<update id="myPagePayUpdate" parameterType="userPayment">
 	UPDATE
@@ -73,11 +72,16 @@
 	CARD_COMPANY = #{card_company},
 	SERIAL_NUMBER = #{serial_number},
 	CVC = #{cvc},
-	MONTH = #{month}
+	MONTH = #{month},
 	YEAR = #{year}
-	WHERE USER_ID = #{user_id }
+	WHERE USER_ID = ${user_id }
 	</update>
-
+	<select id="myPagePayInsert" resultType="userPayment">
+		INSERT INTO
+		USER_PAYMENT
+		( USER_ID, CARD_COMPANY, SERIAL_NUMBER, CVC, MONTH, YEAR )	VALUES
+		( ${user_id }, #{card_company}, #{serial_number}, #{cvc}, #{month}, #{year})
+	</select>
 
 
 </mapper>

@@ -128,6 +128,11 @@ public class AuctionUserController {
 		service.myPagePayUpdate(upt);
 		return "redirect:/myPage/userPayment.do";
 	}
+	@RequestMapping("/myPage/payInsert.do")
+	public String myPagePayInsert(UserPayment upt) {
+		service.myPagePayInsert(upt);
+		return "redirect:/myPage/userPayment.do";
+	}
 	
 	
 	// 회원정보에 합침.

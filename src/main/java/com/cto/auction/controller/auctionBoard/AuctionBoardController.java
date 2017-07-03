@@ -101,8 +101,8 @@ public class AuctionBoardController {
 	public String insertProc(@ModelAttribute AuctionBoard ins, HttpSession session){
 		// 세션값 변수 선언
 		String name = (String) session.getAttribute("name");
-		int user_id = (int) session.getAttribute("id");
-		int auction_id = (int) session.getAttribute("auction_id");
+		int user_id = (Integer) session.getAttribute("id");
+		int auction_id = (Integer) session.getAttribute("auction_id");
 		// 세션값들을 해당 컬럼값들로 설정
 		ins.setAuction_id(auction_id);
 		ins.setBoard_writer_id(user_id);
@@ -172,8 +172,8 @@ public class AuctionBoardController {
 	public String insertReply(@ModelAttribute AuctionBoard reply, @RequestParam int board_group, HttpSession session){
 		// 세션값 가져와서 변수 선언
 		String name = (String) session.getAttribute("name");
-		int user_id = (int) session.getAttribute("id");
-		int auction_id = (int) session.getAttribute("auction_id");
+		int user_id = (Integer) session.getAttribute("id");
+		int auction_id = (Integer) session.getAttribute("auction_id");
 		// 변수값 컬럼명에 삽입
 		reply.setBoard_writer_id(user_id);
 		reply.setAuction_id(auction_id);
@@ -190,9 +190,9 @@ public class AuctionBoardController {
 			@RequestParam int auction_id, AuctionItem upt, AuctionBid bid, Model m, HttpSession session) throws ParseException{
 		
 		// 세션값 변수로 선언
-		int auctioneer = (int) session.getAttribute("auctioneer_id");
+		int auctioneer = (Integer) session.getAttribute("auctioneer_id");
 		String name = (String) session.getAttribute("name");
-		int id = (int) session.getAttribute("id");
+		int id = (Integer) session.getAttribute("id");
 	    // 경매종료 로직(경매마감시간과 현재시간 계산)
 	    String nowDate = sdf.format(new Date());
 	    Date parseNow = sdf.parse(nowDate);
