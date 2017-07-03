@@ -60,9 +60,20 @@
 		<c:import url="myPage/userInfo.jsp"/>
 	</c:if> 
 
-<!-- TODO 공지 및 판매자 정보도 이렇게?? -->
+	<!-- 판매자(물품등록/계좌등록/판매중인물품-판매중,낙찰,유찰)-->
+	<c:if test="${pageName == 'auctioneerPage/auctioneerInfo' }">
+		<c:import url="auctioneerPage/auctioneerInfo.jsp"/>
+	</c:if>
+	<c:if test="${pageName == 'auctioneerPage/saleReg' }">
+		<c:import url="auctioneerPage/saleReg.jsp"/>
+	</c:if>
+	<c:if test="${pageName == 'auctioneerPage/saleInfo' }">
+		<c:import url="auctioneerPage/saleInfo.jsp"/>
+	</c:if>
+
+
 	<div>
-		<!-- TODO c:import 로 변경 -->
+		
 		<h1>푸터 - 사이트맵</h1>
 	</div>
 </body>

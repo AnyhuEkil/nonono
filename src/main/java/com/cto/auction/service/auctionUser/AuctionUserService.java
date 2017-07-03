@@ -55,12 +55,16 @@ public class AuctionUserService {
 	}
 
 	public UserPayment myPageUserPayment(UserPayment info, HttpSession session) {
+		System.out.println("세션아이디:"+(Integer) session.getAttribute("sessionUser_id"));
 		info.setUser_id((Integer) session.getAttribute("sessionUser_id"));
 		return dao.myPageUserPayment(info);
 	}
 
 	public void myPagePayUpdate(UserPayment upt) {
 		dao.myPagePayUpdate(upt);
+	}
+	public void myPagePayInsert(UserPayment upt) {
+		dao.myPagePayInsert(upt);
 	}
 
 }

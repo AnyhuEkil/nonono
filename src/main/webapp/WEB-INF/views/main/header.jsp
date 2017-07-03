@@ -64,7 +64,7 @@
 							<!-- 회원정보(메뉴) : 개인정보,입찰정보,배송지정보,카드정보,쪽지함 페이지로~ -->
 							<li class=""><a href="${path }/myPage/userInfo.do">회원정보(메뉴)</a></li>
 							<!-- 판매정보(메뉴) : 판매자 정보, 판매물품, 물품등록, 출금?? 등등..  -->
-							<li class=""><a href="${path }/TODO.do">판매정보(메뉴)</a></li>
+							<li class=""><a href="${path }/auctioneerPage/auctioneerInfo.do">판매정보(메뉴)</a></li>
 							<li class=""><a href="${path }/auctionUser/logout.do">로그아웃</a></li>
 							<!-- TODO 물품등록 페이지로 이동~ -->							
 							<li class=""><a id="insert" href="${path }/item/insert.do">물품등록</a> </li>
